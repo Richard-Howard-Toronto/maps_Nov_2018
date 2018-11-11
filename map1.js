@@ -190,14 +190,23 @@
       navigator.geolocation.getCurrentPosition(function(position) {
         const lat = position.coords.latitude;
         console.log(`lat is ${lat}`)
+
+        var elLat = document.getElementById('lat');
+        elLat.textContent = position.coords.latitude;
       })
+
   }
   findLocationLat();
+
+
 
   function findLocationLon() {
       navigator.geolocation.getCurrentPosition(function(position) {
         const lon = position.coords.longitude;
         console.log(`lon is ${lon}`)
+
+        var elLon = document.getElementById('lon');
+        elLon.textContent = position.coords.longitude;
       })
   }
   findLocationLon();
@@ -228,7 +237,7 @@
 
 
     google.maps.event.addListener(home, 'click', function() {
-      infowindow.setContent('This is 166 Hudson Drive'),
+      infowindow.setContent('This is where I am right now, except is isnt'),
       infowindow.open(app.map, home)
     })
 
